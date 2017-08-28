@@ -1,6 +1,8 @@
-﻿# BunToolkit Walk-On-LAN Sample
+﻿# BunToolkit Sample
 
-## Magic Packet
+## Walk-On-LAN
+
+### Magic Packet
 ```CSharp
 using Bun.Toolkit.Net.Extensions;
 using System.Net.NetworkInformation;

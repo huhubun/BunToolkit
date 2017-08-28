@@ -1,12 +1,11 @@
-﻿using Bun.Toolkit.Net.Extensions;
+﻿using Bun.Toolkit.Extensions;
 using System;
 using System.Net.NetworkInformation;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Bun.Toolkit.Net.Test.WakeOnLAN
+namespace Bun.Toolkit.Test.WakeOnLAN
 {
-    public class MagicPacketTestAsync
+    public class MagicPacketTest
     {
         [Fact]
         public void WhenPhysicalAddressIsNull_Throws_ArgumentNullException()
@@ -15,7 +14,7 @@ namespace Bun.Toolkit.Net.Test.WakeOnLAN
             PhysicalAddress address = null;
 
             // Act & Assert
-            Assert.ThrowsAsync<ArgumentNullException>(() => Task.Run(() => address.WakeAsync()));
+            Assert.Throws<ArgumentNullException>(() => address.Wake());
         }
 
         [Fact]
@@ -28,7 +27,7 @@ namespace Bun.Toolkit.Net.Test.WakeOnLAN
             var isSuccessed = false;
             try
             {
-                address.WakeAsync();
+                address.Wake();
                 isSuccessed = true;
             }
             catch (Exception ex)
@@ -40,4 +39,5 @@ namespace Bun.Toolkit.Net.Test.WakeOnLAN
             Assert.True(isSuccessed);
         }
     }
+
 }

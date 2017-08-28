@@ -1,11 +1,11 @@
-﻿using Bun.Toolkit.Net.Extensions;
+﻿using Bun.Toolkit.Extensions;
 using System.Net.NetworkInformation;
 
-namespace Bun.Toolkit.Net.Samples.WakeOnLAN
+namespace Bun.Toolkit.Sample
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             // Magic Packet Sample
 

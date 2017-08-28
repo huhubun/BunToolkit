@@ -3,13 +3,14 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
-namespace Bun.Toolkit.Net.Extensions
+namespace Bun.Toolkit.Extensions
 {
-    /// <summary>
-    /// Wake-on-LAN extension methods 
-    /// </summary>
-    public static class WOL
+    public static class WOLExtension
     {
+        /// <summary>
+        /// Wake this MAC address up
+        /// </summary>
+        /// <param name="address">MAC address</param>
         public static void Wake(this PhysicalAddress address)
         {
             var magicPacketBytes = GetMagicPacketBytes(address);
@@ -19,6 +20,10 @@ namespace Bun.Toolkit.Net.Extensions
             client.Send(magicPacketBytes, magicPacketBytes.Length);
         }
 
+        /// <summary>
+        /// Wake this MAC address up
+        /// </summary>
+        /// <param name="address">MAC address</param>
         public static async void WakeAsync(this PhysicalAddress address)
         {
             var magicPacketBytes = GetMagicPacketBytes(address);
